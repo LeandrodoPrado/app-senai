@@ -45,6 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     const double imageRadius = 40;
 
+    TextEditingController nameController = TextEditingController();
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -80,7 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           onTap: () {
                             showDialog(
                               context: context,
-                              builder: (_) => EditPage(),
+                              builder: (_) => EditPage(
+                                nameController: nameController,
+                              ),
                             );
                           },
                           child: Text(
